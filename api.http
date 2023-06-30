@@ -1,0 +1,26 @@
+#Get all data 
+Get http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+#Create a new book
+####
+POST http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "The tale of naruto"
+}
+
+#Update an existing book with id
+####
+PUT http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "The tale of naruto uzumaki"
+}
+
+# Delete a book using id 
+####
+DELETE http://localhost:3001/books/2 HTTP/1.1
+Content-Type: application/json
