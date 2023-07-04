@@ -2,10 +2,14 @@ import './css/index.css'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import {BookProvider} from './Context/Books';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <BookProvider>
+        <App />
+    </BookProvider>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

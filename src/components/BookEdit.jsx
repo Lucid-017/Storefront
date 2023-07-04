@@ -1,12 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import BooksContext from "../Context/Books"
 
 const BookEdit = ({book,onSubmit})=>{
+    const {updateBookTitleById} = useContext(BooksContext)
     const [title,setTitle]= useState(book.title)
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-
-        onSubmit(book.id,title);
+        // this functions primarily for closing the edit form
+        onSubmit();
+        // so we after the form has been submitted we then want to call our onEdit function from our context
+        updateBookTitleById(book.id,title)
     }
     const handleChange = (e)=>{
         setTitle(e.target.value)

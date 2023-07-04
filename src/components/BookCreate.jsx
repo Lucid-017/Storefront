@@ -1,7 +1,8 @@
-// form for creating the book
-import { useState } from "react"
+import { useState,useContext } from "react";
+import BooksContext from "../Context/Books";
 
-const BookCreate = ({onCreate})=>{
+const BookCreate = ()=>{
+    const {createBook} = useContext(BooksContext)
     const [title,setTitle]= useState('')
 
     const handleChange= (e)=>{
@@ -11,7 +12,7 @@ const BookCreate = ({onCreate})=>{
     const handleSubmit =(e)=>{
         e.preventDefault()
         // we want to create book when we submit,so we call the onCreate prop from our app
-        onCreate(title)
+        createBook(title)
         setTitle('')
     }
     return(
